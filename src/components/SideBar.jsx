@@ -24,6 +24,7 @@ function SideBar() {
         <NavLink
           className="bg-white/10 text-[1em] px-4 py-1` font-[Open_Sans] font-med capitalize w-full flex items-center justify-around gap-3 rounded-sm border-b-1 border-gray-500"
           to='/infinite'
+          reloadDocument
         >
           <img src={Infinite} alt="infinite logo png" className="h-3 bg-ambe0 fill-amber-50" />
           infinite mode</NavLink>
@@ -31,13 +32,14 @@ function SideBar() {
         <NavLink
           className="bg-white/10 px-4 py-1 font-[Open_Sans] font-med capitalize w-full flex items-center justify-around gap-3 rounded-sm"
           to='/'
+          reloadDocument
         >
           <img src={trial} alt="infinite logo png" className="h-4 bg-ambe0 fill-amber-50" />
           trial mode
         </NavLink>
 
 
-        <ParaLink target='/long-para' content={'long paragraph'} />
+        <ParaLink target='/long-para' content={'long paragraph'} reloadDocument />
 
       </div>
 
