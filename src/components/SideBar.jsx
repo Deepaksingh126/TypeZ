@@ -15,7 +15,9 @@ function SideBar() {
       <div className="upperSection w-full h-[10%] p-4 flex items-center flex-col justify-between">
         <div className="w-full p-2 flex justify-between align-center">
           <p className="text-[1.3rem] font-med font-mono">TypeZ</p>
-          <img src={Sun} alt="" className="bg-black/30 p-1 rounded-sm border-1 border-gray-400" />
+          <img src={Sun} alt="" className="bg-black/30 p-1 rounded-sm cursor-pointer border-1 border-gray-400" />
+
+        
         </div>
       </div>
 
@@ -52,7 +54,7 @@ function SideBar() {
           <a href="https://github.com/deepaksingh126" target="blank" className="p-1 rounded-sm bg-black/30 borer-1 border-gray-400">
             <TwitterLogo />
           </a>
-          <a href="https://github.com/deepaksingh126" target="blank" className="p-1 rounded-sm bg-black/30 boder-1 border-gray-400">
+          <a href="https://github.com/Deepaksingh126/TypeZ" target="blank" className="p-1 rounded-sm bg-black/30 boder-1 border-gray-400">
             <GithubLogo />
           </a>
         </div>

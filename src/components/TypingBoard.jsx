@@ -23,7 +23,7 @@ const TypingBoard = (props) => {
         const handleKeyDown = (e) => {
             const pressedKey = e.key;
 
-            if (/^[a-zA-Z0-9\s]$/.test(pressedKey)) {
+            if (/^[a-zA-Z0-9\s'",".]$/.test(pressedKey)) {
                 setWordsPressed(prev => prev + 1)
 
                 if (pressedKey === quote[currentIdx]) {
@@ -122,7 +122,7 @@ const TypingBoard = (props) => {
 
             </div>
 
-            {/* <TypingCompleteScreen/> */}
+            {/* <Typing Complete Screen/> */}
             {isCompeleted ? <TypingCompleteScreen finalTime={finalTime} WPM={WPM} accuracy={accuracy} />
                 : <div> </div>}
 
