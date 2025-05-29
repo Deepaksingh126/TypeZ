@@ -5,6 +5,7 @@ import { useLocation, useNavigate } from 'react-router-dom'
 
 function TypingCompleteScreen({ finalTime, WPM, accuracy, onRestart }) {
 
+    const location = useLocation()
     const handleGameRestart = () => {
         if (onRestart && typeof onRestart === 'function') {
             onRestart(); // Call the restart function passed from parent
@@ -46,4 +47,4 @@ function TypingCompleteScreen({ finalTime, WPM, accuracy, onRestart }) {
     )
 }
 
-export default TypingCompleteScreen
+export default TypingCompleteScreen;

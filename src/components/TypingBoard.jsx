@@ -2,9 +2,12 @@ import React, { useEffect, useState } from 'react';
 import Timer from './Timer';
 import { motion, time } from "motion/react"
 import TypingCompleteScreen from './TypingCompleteScreen';
+import reload from '../assets/reload.svg';
+import { useLocation } from 'react-router-dom';
+
 
 const TypingBoard = (props) => {
-    // console.log(props.quotes)
+    // console.log(props)
     const [words, setWords] = useState([])
     const [quote, setQuote] = useState(props.quotes)
 
@@ -19,13 +22,37 @@ const TypingBoard = (props) => {
     const [WPM, setWPM] = useState(0)
     const [accuracy, setAccuracy] = useState(0)
 
+
+    const resetGameStates = () => {
+        setCurrentIdx(0);
+        setTypedChars("");
+        setWordsPressed(0);
+        setRightWords(0);
+        setWarning(true);
+        setTypos(0);
+        setIsCompeleted(false);
+        setFinalTime(0);
+        setWPM(0);
+        setAccuracy(0);
+    };
+
+    const handleGameRestart = () => {
+    if (props.onRestart && typeof props.onRestart === 'function') {
+        props.onRestart(); // Triggers parent to update quotes prop
+    } else {
+        // fallback: reset current quote manually
+        const cleanedQuote = props.quotes.trim().replace(/\s+/g, ' ');
+        setQuote(cleanedQuote);
+        resetGameStates();
+    }
+    };
     // Add this useEffect to update quote when props change and reset all states
     useEffect(() => {
-        // Clean the quote string 
+        // Clean the quote string to remove any hidden characters
         const cleanedQuote = props.quotes.trim().replace(/\s+/g, ' ');
         setQuote(cleanedQuote);
         
-        // Reset all states
+        // Reset all states when quote changes
         setCurrentIdx(0);
         setTypedChars("");
         setWordsPressed(0);
@@ -103,6 +130,23 @@ const TypingBoard = (props) => {
 
                     {/* timer */}
                     <Timer isCompeleted={isCompeleted} setFinalTime={setFinalTime} />
+
+                    {/* handling the restart button */}
+                    <button 
+                        tabIndex={-1}
+                        // onClick={handleGameRestart}
+                         onMouseDown={(e) => {
+                                e.preventDefault(); // prevent focusing on mousedown
+                                handleGameRestart();
+                            }}
+                            onKeyDown={(e) => {
+                                e.preventDefault(); // block space/enter key presses
+                                e.stopPropagation();
+                            }}
+                        className='reload inline p-2 uppercase font-med bg-white/10 rounded-md border-1 border-gray-500 hover:bg-white/20 transition-colors'
+                    >
+                        <img src={reload} alt="reload" className="h-5" />
+                    </button>
 
 
                 </div>
