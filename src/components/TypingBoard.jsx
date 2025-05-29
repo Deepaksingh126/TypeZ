@@ -4,6 +4,7 @@ import { motion, time } from "motion/react"
 import TypingCompleteScreen from './TypingCompleteScreen';
 
 const TypingBoard = (props) => {
+    console.log(props.quotes)
     const [words, setWords] = useState([])
     const [quote, setQuote] = useState(props.quotes)
 
@@ -18,13 +19,42 @@ const TypingBoard = (props) => {
     const [WPM, setWPM] = useState(0)
     const [accuracy, setAccuracy] = useState(0)
 
+    // Add this useEffect to update quote when props change and reset all states
+    useEffect(() => {
+        // Clean the quote string to remove any hidden characters
+        const cleanedQuote = props.quotes.trim().replace(/\s+/g, ' ');
+        setQuote(cleanedQuote);
+        
+        // Reset all states when quote changes
+        setCurrentIdx(0);
+        setTypedChars("");
+        setWordsPressed(0);
+        setRightWords(0);
+        setWarning(true);
+        setTypos(0);
+        setIsCompeleted(false);
+        setFinalTime(0);
+        setWPM(0);
+        setAccuracy(0);
+        
+        console.log('Quote updated:', cleanedQuote);
+        console.log('Quote length:', cleanedQuote.length);
+        console.log('Quote characters:', cleanedQuote.split('').map((char, i) => `${i}: "${char}" (${char.charCodeAt(0)})`));
+    }, [props.quotes]);
+
     useEffect(() => {
 
         const handleKeyDown = (e) => {
             const pressedKey = e.key;
+            
+            // Don't process if typing is completed
+            if (isCompeleted) return;
 
-            if (/^[a-zA-Z0-9\s]$/.test(pressedKey)) {
+            // Allow more characters including punctuation
+            if (/^[a-zA-Z0-9\s.,!?;:'"()-]$/.test(pressedKey)) {
                 setWordsPressed(prev => prev + 1)
+                
+                console.log(`Pressed: "${pressedKey}" (${pressedKey.charCodeAt(0)}), Expected: "${quote[currentIdx]}" (${quote[currentIdx]?.charCodeAt(0)}), CurrentIdx: ${currentIdx}`);
 
                 if (pressedKey === quote[currentIdx]) {
                     const nextIdx = currentIdx + 1;
@@ -34,10 +64,10 @@ const TypingBoard = (props) => {
                     setCurrentIdx(nextIdx);
                     setTypedChars(prev => prev + pressedKey);
                     setRightWords(prev => prev + 1)
-                    setWarning(prev => prev = true)
+                    setWarning(true) // Fixed assignment operator
 
                 } else {
-                    setWarning(prev => prev = false)
+                    setWarning(false) // Fixed assignment operator
                     setTypos(prev => prev + 1)
                 }
             }
