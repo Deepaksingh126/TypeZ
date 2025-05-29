@@ -9,7 +9,7 @@ function TypingCompleteScreen({ finalTime, WPM, accuracy, onRestart }) {
         if (onRestart && typeof onRestart === 'function') {
             onRestart(); // Call the restart function passed from parent
         } else {
-            // Fallback to page reload if no restart function provided
+            // Fallback to page reload if no restart function there
             window.location.reload();
         }
     };
@@ -33,7 +33,7 @@ function TypingCompleteScreen({ finalTime, WPM, accuracy, onRestart }) {
                     <p className="text-lg inline mx-2 py-1 rounded-sm px-2 text-white bg-white/10">Your WPM: {WPM}</p>
                     <p className="text-lg inline mx-2 py-1 rounded-sm px-2 text-white bg-white/10">Your accuracy: {accuracy}%</p>
                     
-                    {/* Use the recommended approach */}
+                    {/* handling the restart button */}
                     <button 
                         onClick={handleGameRestart}
                         className='reload inline mx-2 py-1 rounded-sm px-2 text-white bg-white/10 text-lg hover:bg-white/20 transition-colors'

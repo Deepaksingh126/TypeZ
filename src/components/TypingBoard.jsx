@@ -21,11 +21,11 @@ const TypingBoard = (props) => {
 
     // Add this useEffect to update quote when props change and reset all states
     useEffect(() => {
-        // Clean the quote string to remove any hidden characters
+        // Clean the quote string 
         const cleanedQuote = props.quotes.trim().replace(/\s+/g, ' ');
         setQuote(cleanedQuote);
         
-        // Reset all states when quote changes
+        // Reset all states
         setCurrentIdx(0);
         setTypedChars("");
         setWordsPressed(0);
