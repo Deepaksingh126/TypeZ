@@ -9,8 +9,6 @@ import TypingCompleteScreen from './TypingCompleteScreen';
 
 const InfiniteTypingBoard = (props) => {
     const [words, setWords] = useState([])
-    // const [quote, setQuote] = useState("The sun is shining today, and many people are outside enjoying the warm weather. Some are walking their dogs, while others are sitting on benches and reading books. The park is full of life, with children playing and families picnicking. It's a nice day to be alive.")
-
     const [quote, setQuote] = useState(props.quotes)
 
     const [currentIdx, setCurrentIdx] = useState(0);
@@ -72,19 +70,10 @@ const InfiniteTypingBoard = (props) => {
         <>
             <div className='min-w-[80%] max-w-[80%] min-h-screen justify-center items-center flex-wrap p-2 rounded-xl flex flex-col gap-10'>
 
-                <div className="topbar w-full flex-wrap overflow-hidden flex justify-end bg-orange-400/60 rounded-xl gap-2 z-40 p-4 shadow-amber-800/60 drop-shadow-2xl shadow-2xl">
-
-                    {/* right words pressed
-                    <div className='inline p-2 uppercase font-med bg-amber-100/30 rounded-md '>right Words pressed : {rightWords}</div>
-
-                    word per minute
-                    <div className='inline p-2 uppercase font-med bg-amber-100/30 rounded-md '>WPM  : {WPM}</div>
-
-                    total key pressed
-                    <div className='inline p-2 uppercase font-med bg-amber-100/30 rounded-md '>key pressed : {wordsPressed}</div> */}
+                <div className="topbar w-full flex-wrap overflow-hidden flex justify-end bg-white/10 rounded-xl gap-2 z-40 p-4 shadow-white/10 drop-shadow-2xl shadow-2xl">
 
                     {/* total typos while typing*/}
-                    <div className='inline p-2 uppercase font-med bg-orange-100/30 rounded-md '>total Typos : {typos}</div>
+                    <div className='inline p-2 uppercase font-med bg-white/10 rounded-md border-1 border-gray-500 '>total Typos : {typos}</div>
 
                     {/* timer */}
                     <Timer isCompeleted={isCompeleted} setFinalTime={setFinalTime} />
@@ -92,7 +81,7 @@ const InfiniteTypingBoard = (props) => {
 
                 </div>
 
-                <div className="w-full flex-wrap overflow-hidden flex justify-end bg-orange-400/60 rounded-xl gap-2 z-40 p-6 shadow-amber-800/60 drop-shadow-2xl shadow-2xl">
+                <div className="w-full flex-wrap overflow-hidden flex justify-end bg-white/10 rounded-xl gap-2 z-40 p-6 shadow-white/20 drop-shadow-2xl shadow-2xl text-white border-1 border-gray-500 ">
 
 
 
@@ -107,19 +96,19 @@ const InfiniteTypingBoard = (props) => {
                                             <span
                                                 key={index}
                                                 className={` ${index < currentIdx
-                                                    ? 'text-orange-100'
+                                                    ? 'text-white/40'
                                                     : index === currentIdx
-                                                        ? 'bg-orange-100 text-black'
-                                                        : 'text-gray-700'} w-3 text-lg`} > {char}
+                                                        ? 'bg-white text-black'
+                                                        : 'text-white'} w-3 text-lg`} > {char}
                                             </span>
                                         );
                                     })}
                                     {/* Add space after each word */}
                                     <span
                                         className={`${startIndex + word.length < currentIdx
-                                            ? 'text-orange-100'
+                                            ? 'text-gray-800'
                                             : startIndex + word.length === currentIdx
-                                                ? 'bg-orange-100 text-black'
+                                                ? 'bg-white text-black'
                                                 : 'text-gray-700'
                                             } w-3 text-lg`}
                                     >
@@ -141,7 +130,14 @@ const InfiniteTypingBoard = (props) => {
             {isCompeleted ? <TypingCompleteScreen finalTime={finalTime} WPM={WPM} accuracy={accuracy} />
                 : <div> </div>}
 
-            <div className={`${warning ? " " : "bg-gradient-to-br z-30 from-white/10 to-95% to-red-600/30"} w-[100vw] h-screen absolute top-0 right-0`}></div>
+            <div
+                animate={{
+                    opacity: 0
+                }}
+                transition={{
+                    duration: 2
+                }}
+                className={`${warning ? " " : "bg-gradient-to-br z-30 from-black to-95% to-red-600/20"} w-[100vw] h-screen absolute top-0 right-0`}></div>
         </>
 
     );
