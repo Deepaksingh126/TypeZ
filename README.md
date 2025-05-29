@@ -1,12 +1,21 @@
-# React + Vite
+# TypeZ
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+It is a web app for helping peoples in improving thier typing speed and we are still working on it feel free to contribute to this project.
 
-Currently, two official plugins are available:
+this web app is made-up on react + vite.
+you can clone it in your machine by following these commands
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+git clone https://github.com/Deepaksingh126/TypeZ
+```
+```
+cd TypeZ
+```
+```
+npm i
+```
+```
+code .
+```
 
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+and after that you can go and test it on your own machine. it will be running on `localhost:5173`
