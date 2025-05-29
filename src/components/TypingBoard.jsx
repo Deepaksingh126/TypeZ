@@ -4,7 +4,7 @@ import { motion, time } from "motion/react"
 import TypingCompleteScreen from './TypingCompleteScreen';
 
 const TypingBoard = (props) => {
-    console.log(props.quotes)
+    // console.log(props.quotes)
     const [words, setWords] = useState([])
     const [quote, setQuote] = useState(props.quotes)
 
@@ -37,9 +37,9 @@ const TypingBoard = (props) => {
         setWPM(0);
         setAccuracy(0);
         
-        console.log('Quote updated:', cleanedQuote);
-        console.log('Quote length:', cleanedQuote.length);
-        console.log('Quote characters:', cleanedQuote.split('').map((char, i) => `${i}: "${char}" (${char.charCodeAt(0)})`));
+        // console.log('Quote updated:', cleanedQuote);
+        // console.log('Quote length:', cleanedQuote.length);
+        // console.log('Quote characters:', cleanedQuote.split('').map((char, i) => `${i}: "${char}" (${char.charCodeAt(0)})`));
     }, [props.quotes]);
 
     useEffect(() => {
@@ -54,7 +54,7 @@ const TypingBoard = (props) => {
             if (/^[a-zA-Z0-9\s.,!?;:'"()-]$/.test(pressedKey)) {
                 setWordsPressed(prev => prev + 1)
                 
-                console.log(`Pressed: "${pressedKey}" (${pressedKey.charCodeAt(0)}), Expected: "${quote[currentIdx]}" (${quote[currentIdx]?.charCodeAt(0)}), CurrentIdx: ${currentIdx}`);
+                // console.log(`Pressed: "${pressedKey}" (${pressedKey.charCodeAt(0)}), Expected: "${quote[currentIdx]}" (${quote[currentIdx]?.charCodeAt(0)}), CurrentIdx: ${currentIdx}`);
 
                 if (pressedKey === quote[currentIdx]) {
                     const nextIdx = currentIdx + 1;
