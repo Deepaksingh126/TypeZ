@@ -67,10 +67,10 @@ const TypingBoard = (props) => {
         <>
             <div className='min-w-[80%] max-w-[80%] min-h-screen justify-center items-center flex-wrap p-2 rounded-xl flex flex-col gap-10'>
 
-                <div className="topbar w-full flex-wrap overflow-hidden flex justify-end bg-white/10 rounded-xl gap-2 z-40 p-4 shadow-white/10 drop-shadow-2xl shadow-2xl">
+                <div className="topbar w-full flex-wrap-reverse sm:flex-wrap overflow-hidden flex justify-center sm:justify-end bg-white/10 rounded-xl gap-3 z-40 p-4 shadow-white/10 drop-shadow-2xl shadow-2xl">
                     {/* button if user wants to restart again */}
                     <button onClick={() => window.location.reload()}
-                        className='flex items-center justify-around gap-2 p-2 uppercase font-med bg-black/10 cursor-pointer hover:bg-white/10 rounded-md border-1 border-gray-500'>
+                        className='flex items-center justify-center gap-2 p-2 uppercase font-med bg-black/10 cursor-pointer hover:bg-white/10 rounded-md border-1 border-gray-500 w-full sm:w-fit'>
                         <ReloadLogo /> replay</button>
 
                     {/* total typos while typing*/}

@@ -13,7 +13,7 @@ const App = () => {
 
       <SideBar />
 
-      <div className='w-[85vw] bg-black flex items-center justify-center h-screen flex-col absolute right-0 overflow-hidden'>
+      <div className='lg:w-[85vw] w-full bg-black flex items-center justify-center h-screen flex-col absolute right-0 overflow-hidden'>
         <Routes>
           <Route
             path='/infinite'
