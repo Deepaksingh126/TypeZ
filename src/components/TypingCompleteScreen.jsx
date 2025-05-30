@@ -19,11 +19,13 @@ function TypingCompleteScreen({ finalTime, WPM, accuracy }) {
                     <p className='pb-10 '>O_o</p>
                     <p className='pb-10'>stop typing</p>
 
-                    <p className="text-lg inline mx-2 py-1 rounded-sm px-2 text-white bg-white/10">Your time: {finalTime} sec</p>
-                    <p className="text-lg inline mx-2 py-1 rounded-sm px-2 text-white bg-white/10">Your WPM: {WPM}</p>
-                    <p className="text-lg inline mx-2 py-1 rounded-sm px-2 text-white bg-white/10">Your accuracy: {accuracy}
-                        %
-                    </p>
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-0">
+                        <p className="text-lg inline mx-2 py-1 rounded-sm px-2 text-white bg-white/10">Your time: {finalTime} sec</p>
+                        <p className="text-lg inline mx-2 py-1 rounded-sm px-2 text-white bg-white/10">Your WPM: {WPM}</p>
+                        <p className="text-lg inline mx-2 py-1 rounded-sm px-2 text-white bg-white/10">Your accuracy: {accuracy}
+                            %
+                        </p>
+                    </div>
                 </motion.div>
                 <button onClick={() => window.location.reload()} className='text-xl px-2 py-1 cursor-pointer flex items-center justify-center uppercase font-medium my-4 bg-black/40 border-1 border-gray-400 rounded-xl'>replay</button>
             </div>
