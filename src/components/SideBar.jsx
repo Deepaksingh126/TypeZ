@@ -8,6 +8,7 @@ import ParaLink from "./ParaLink";
 import GithubLogo from "../Svg/GithubLogo";
 import TwitterLogo from "../Svg/TwitterLogo";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { AiOutlineClose } from "react-icons/ai";
 
 function SideBar() {
   const [open, setOpen] = useState(false);
@@ -20,7 +21,7 @@ function SideBar() {
         onClick={() => setOpen((prev) => !prev)}
         aria-label="Toggle sidebar"
       >
-        <GiHamburgerMenu />
+        {open ? <AiOutlineClose /> : <GiHamburgerMenu />}
       </button>
 
       <div
