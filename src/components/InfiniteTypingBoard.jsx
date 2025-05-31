@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Timer from './Timer';
 import { motion, time } from "motion/react"
 import TypingCompleteScreen from './TypingCompleteScreen';
+import ReloadLogo from '../Svg/ReloadLogo';
 
 
 
@@ -22,12 +23,15 @@ const InfiniteTypingBoard = (props) => {
     const [WPM, setWPM] = useState(0)
     const [accuracy, setAccuracy] = useState(0)
 
+
+    const randomWords = ["hello", "my", "name", "is", "deepak", "and", "you"];
+
     useEffect(() => {
 
         const handleKeyDown = (e) => {
             const pressedKey = e.key;
 
-            if (/^[a-zA-Z0-9\s]$/.test(pressedKey)) {
+            if (/^[a-zA-Z0-9\s'",".]$/.test(pressedKey)) {
                 setWordsPressed(prev => prev + 1)
 
                 if (pressedKey === quote[currentIdx]) {
@@ -70,8 +74,11 @@ const InfiniteTypingBoard = (props) => {
         <>
             <div className='min-w-[80%] max-w-[80%] min-h-screen justify-center items-center flex-wrap p-2 rounded-xl flex flex-col gap-10'>
 
-                <div className="topbar w-full flex-wrap overflow-hidden flex justify-end bg-white/10 rounded-xl gap-2 z-40 p-4 shadow-white/10 drop-shadow-2xl shadow-2xl">
-
+                <div className="topbar w-full flex-wrap-reverse sm:flex-wrap overflow-hidden flex justify-center sm:justify-end bg-white/10 rounded-xl gap-3 z-40 p-4 shadow-white/10 drop-shadow-2xl shadow-2xl">
+                    {/* button if user wants to restart again */}
+                    <button onClick={() => window.location.reload()}
+                        className='flex items-center justify-center gap-2 p-2 uppercase font-med bg-black/10 cursor-pointer hover:bg-white/10 rounded-md border-1 border-gray-500 w-full sm:w-fit'>
+                        <ReloadLogo /> replay</button>
                     {/* total typos while typing*/}
                     <div className='inline p-2 uppercase font-med bg-white/10 rounded-md border-1 border-gray-500 '>total Typos : {typos}</div>
 
@@ -126,7 +133,7 @@ const InfiniteTypingBoard = (props) => {
 
             </div>
 
-            {/* <TypingCompleteScreen/> */}
+            {/* <Typing Complete Screen/> */}
             {isCompeleted ? <TypingCompleteScreen finalTime={finalTime} WPM={WPM} accuracy={accuracy} />
                 : <div> </div>}
 

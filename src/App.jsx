@@ -19,7 +19,7 @@ const App = () => {
             path='/infinite'
             element={<InfiniteTypingBoard
               key={location.pathname}
-              quotes="we are building this page where u can type infinite words."
+              quotes="we are building this page where u can type infinite words. until we build this page be patient and use other typing paragraphs and if you are ad ev feel free to contribute to our repository on github"
             />}
           />
 
