@@ -5,6 +5,7 @@ import SideBar from './components/SideBar'
 import { Route, Routes, useLocation } from 'react-router-dom'
 import { motion } from "motion/react"
 import InfiniteTypingBoard from './components/InfiniteTypingBoard'
+import AuthForDev from './components/AuthForDev'
 
 const App = () => {
   const location = useLocation();
@@ -16,10 +17,17 @@ const App = () => {
       <div className='lg:w-[85vw] w-full bg-black flex items-center justify-center h-screen flex-col absolute right-0 overflow-hidden'>
         <Routes>
           <Route
-            path='/infinite'
+            path='/infinite-typing'
             element={<InfiniteTypingBoard
               key={location.pathname}
-              quotes="we are building this page where u can type infinite words. until we build this page be patient and use other typing paragraphs and if you are ad ev feel free to contribute to our repository on github"
+              quotes="we are building this page where u can type infinite words. until we build this page be patient and use other typing paragraphs and if you are a   dev feel free to contribute to our repository on github"
+            />}
+          />
+
+         <Route
+            path='/Auth'
+            element={<AuthForDev
+              key={location.pathname}
             />}
           />
 

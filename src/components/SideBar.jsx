@@ -43,7 +43,7 @@ function SideBar() {
         <div className="lowerSection w-full flex-1 flex justify-start p-4 flex-col items-center gap-3 overflow-y-auto">
           <NavLink
             className="bg-white/10 text-[1em] px-4 py-1 font-[Open_Sans] font-med capitalize w-full flex items-center justify-around gap-3 rounded-sm border-b-1 border-gray-500 text-center"
-            to="/infinite"
+            to="/Auth"
             onClick={() => setOpen(false)}
           >
             <img
