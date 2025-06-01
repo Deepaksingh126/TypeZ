@@ -41,6 +41,9 @@ function SideBar() {
           </div>
         </div>
         <div className="lowerSection w-full flex-1 flex justify-start p-4 flex-col items-center gap-3 overflow-y-auto">
+        
+        
+        {/* infinite mode tab  */}
           <NavLink
             className="bg-white/10 text-[1em] px-4 py-1 font-[Open_Sans] font-med capitalize w-full flex items-center justify-around gap-3 rounded-sm border-b-1 border-gray-500 text-center"
             to="/Auth"
@@ -53,6 +56,7 @@ function SideBar() {
             />
             infinite mode
           </NavLink>
+
           <NavLink
             className="bg-white/10 px-4 py-1 font-[Open_Sans] font-med capitalize w-full flex items-center justify-around gap-3 rounded-sm text-center"
             to="/"
@@ -65,8 +69,12 @@ function SideBar() {
             />
             trial mode
           </NavLink>
+
           <ParaLink target="/long-para" content={"long paragraph"} />
+          <ParaLink target="/A-to-Z" content={"A to Z"} />
         </div>
+
+        {/* side baar footer  */}
         <div className="lowerSection w-full h-[15%] flex justify-start p-4 flex-col items-center gap-3">
           <div>
             <p className="text-xs text-gray-300 text-center">

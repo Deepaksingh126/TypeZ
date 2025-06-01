@@ -99,7 +99,7 @@ const TypingBoard = (props) => {
                                                 className={` ${index < currentIdx
                                                     ? 'text-white/40'
                                                     : index === currentIdx
-                                                        ? 'bg-white text-black'
+                                                        ? 'bg-white transition-all duration-100 text-black'
                                                         : 'text-white'} w-3 text-lg`} > {char}
                                             </span>
                                         );
