@@ -49,9 +49,9 @@ function AuthForDev() {
         <></>
       )}
 
-      <h2 className="text-2xl font-bold mb-2">Developer Authentication Page</h2>
+      <h2 className="text-2xl font-bold mb-2 text-center sm:text-xl p-0 m-0">Developer Authentication Page</h2>
 
-      <p className="text-lg text-white/80 mb-4">
+      <p className="text-lg text-white/80 lg:text-base mb-4 text-center sm:text-[0.8rem] p-4 text-[0.6rem] ">
         This page is for developers. If you want to contribute or test the
         infinite typing mode, click the button below.
       </p>
@@ -62,18 +62,18 @@ function AuthForDev() {
         value={password}
         onChange={handlePasswordChange}
         onKeyDown={handleKeyDown}
-        className="w-full max-w-md p-2 rounded-md bg-white/10 border-1 border-gray-500"
-      />
-      <div className="flex w-1/2 items-center justify-around mt-6">
+        className="sm:w-full w-2/3  max-w-md p-2 rounded-md bg-white/10 border-1 border-gray-500"
+        />
+      <div className="flex w-1/2 items-center justify-around mt-6 flex-wrap gap-2">
         <Link
           to="/infinite-typing"
-          className="px-6 py-2 bg-blue-700 hover:bg-blue-800 rounded text-white font-semibold transition cursor-pointer"
+          className="px-6 py-2 bg-blue-700 hover:bg-blue-800  lg:text-base mb-4 text-center sm:text-[0.8rem] rounded text-white text-[1rem] font-semibold transition cursor-pointer"
           onClick={handleSubmit}
         >
           Go to Infinite Typing Test
         </Link>
 
-        <a href="https://x.com/Deepak12_6" target="blank" className="flex gap-2 items-center justify-around border-1 round border-white/40 px-4 py-2 font-bold">
+        <a href="https://x.com/Deepak12_6" target="blank" className="flex  lg:text-base mb-4 text-center sm:text-[0.8rem] gap-2 items-center justify-around border-1 round border-white/40 px-4 py-2 font-bold">
           contact the dev
           <LeftArrowLogo/>
         </a>
