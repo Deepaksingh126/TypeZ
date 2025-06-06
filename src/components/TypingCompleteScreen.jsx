@@ -34,4 +34,4 @@ function TypingCompleteScreen({ finalTime, WPM, accuracy }) {
     )
 }
 
-export default TypingCompleteScreen
+export default TypingCompleteScreen;
