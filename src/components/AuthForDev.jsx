@@ -49,7 +49,9 @@ function AuthForDev() {
         <></>
       )}
 
-      <h2 className="text-2xl font-bold mb-2 text-center sm:text-xl p-0 m-0">Developer Authentication Page</h2>
+      <h2 className="text-2xl font-bold mb-2 text-center sm:text-xl p-0 m-0">
+        Developer Authentication Page
+      </h2>
 
       <p className="text-lg text-white/80 lg:text-base mb-4 text-center sm:text-[0.8rem] p-4 text-[0.6rem] ">
         This page is for developers. If you want to contribute or test the
@@ -57,13 +59,13 @@ function AuthForDev() {
       </p>
 
       <input
-        type="text"
+        type="password"
         placeholder="Enter password"
         value={password}
         onChange={handlePasswordChange}
         onKeyDown={handleKeyDown}
         className="sm:w-full w-2/3  max-w-md p-2 rounded-md bg-white/10 border-1 border-gray-500"
-        />
+      />
       <div className="flex w-1/2 items-center justify-around mt-6 flex-wrap gap-2">
         <Link
           to="/infinite-typing"
@@ -73,9 +75,13 @@ function AuthForDev() {
           Go to Infinite Typing Test
         </Link>
 
-        <a href="https://x.com/Deepak12_6" target="blank" className="flex  lg:text-base mb-4 text-center sm:text-[0.8rem] gap-2 items-center justify-around border-1 round border-white/40 px-4 py-2 font-bold">
+        <a
+          href="https://x.com/Deepak12_6"
+          target="blank"
+          className="flex  lg:text-base mb-4 text-center sm:text-[0.8rem] gap-2 items-center justify-around border-1 round border-white/40 px-4 py-2 font-bold"
+        >
           contact the dev
-          <LeftArrowLogo/>
+          <LeftArrowLogo />
         </a>
       </div>
     </div>
