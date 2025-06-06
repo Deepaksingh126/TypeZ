@@ -27,9 +27,9 @@ function Timer({ isCompeleted, setFinalTime }) {
     }, [timer, isCompeleted, setFinalTime]);
 
     return (
-
-        <div className='inline p-2 uppercase font-med bg-white/10 rounded-md border-1 border-gray-500 '>time : {time}</div>
-
+        <div className='inline p-2 uppercase font-med bg-white dark:bg-black/10 rounded-md border border-gray-300 dark:border-gray-600 text-black dark:text-white'>
+            time : {time}
+        </div>
     )
 }
 

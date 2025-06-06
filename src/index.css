@@ -1,10 +1,13 @@
 @import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-@font-face {
+/* @font-face {
   font-family: "Geist";
   src: url(./assets/fonts/geist/Geist-Regular.ttf);
 }
 
 * {
-  font-family: "Geist", sans-serif;
-}
+  font-family: "Geist", sans-serif; */
+/* } */

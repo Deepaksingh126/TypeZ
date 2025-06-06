@@ -1,19 +1,20 @@
 import React from "react";
 import TypingBoard from "./components/TypingBoard";
 import Timer from "./components/Timer";
-import SideBar from "./components/SideBar";
+import SideBar from "./components/Sidebar/SideBar";
 import { Route, Routes, useLocation } from "react-router-dom";
 import { motion } from "motion/react";
 import InfiniteTypingBoard from "./components/InfiniteTypingBoard";
-import AuthForDev from "./components/AuthForDev";
+import AuthForDev from "./components/DevAuth/AuthForDev";
+import './index.css'
 
 const App = () => {
   const location = useLocation();
   return (
-    <div className=" text-white font-[Open_Sans] bg-black">
+    <div className="min-h-screen bg-white dark:bg-black text-black dark:text-white font-[Open_Sans]">
       <SideBar />
 
-      <div className="lg:w-[85vw] w-full bg-black flex items-center justify-center h-screen flex-col absolute right-0 overflow-hidden">
+      <div className="lg:w-[85vw] w-full bg-white dark:bg-black flex items-center justify-center h-screen flex-col absolute right-0 overflow-hidden">
         <Routes>
           <Route
             path="/infinite-typing"
@@ -63,9 +64,7 @@ const App = () => {
 
       {/* some stufffs for styling */}
       <div className="w-[100vw] absolute top-0 right-0 h-screen overflow-hidden overflow-x-hidden">
-     
-
-        <motion.div
+        {/* <motion.div
           animate={{
             x: ["0vw", "25vw", "50vw", "75vw", "50vw", "25vw", "0vw"],
             y: ["0vh", "10vh", "0vh", "50vh", "80vh", "50vh", "0vh"],
@@ -76,10 +75,11 @@ const App = () => {
             ease: "linear",
           }}
           className="w-[500px] h-[500px] bg-blue-950/20 rounded-full z-20 absolute top-0 left-0 blur-3xl"
-        ></motion.div>
+        ></motion.div> */}
       </div>
     </div>
   );
 };
 
 export default App;
+
