@@ -20,8 +20,7 @@ const App = () => {
             element={
               <InfiniteTypingBoard
                 key={location.pathname}
-                quotes="we are building this page where u can type infinite words. until we build this page be patient and use other typing paragraphs and if you are a   dev feel free to contribute to our repository on github"
-              />
+                />
             }
           />
 
@@ -55,7 +54,7 @@ const App = () => {
             element={
               <TypingBoard
                 key={location.pathname}
-                quotes="The sun is shining today, and many people are outside enjoying the warm weather. Some are walking their dogs, while others are sitting on benches and reading books. The park is full of life, with children playing and families picnicking. It's a nice day to be alive."
+                quotes="the sun is shining today and many people are outside enjoying the warm weather some are walking their dogs while others are sitting on benches and reading books the park is full of life with children playing and families picnicking it's a nice day to be alive"
               />
             }
           />
@@ -64,18 +63,7 @@ const App = () => {
 
       {/* some stufffs for styling */}
       <div className="w-[100vw] absolute top-0 right-0 h-screen overflow-hidden overflow-x-hidden">
-        <motion.div
-          animate={{
-            x: ["0vw", "15vw", "40vw", "70vw", "40vw", "35vw", "10vw"],
-            y: ["0vh", "10vh", "0vh", "50vh", "80vh", "40vh", "0vh"],
-          }}
-          transition={{
-            duration: 6,
-            repeat: Infinity,
-            ease: "linear",
-          }}
-          className="w-[500px] h-[500px] bg-blue-950/20 rounded-full z-20 absolute top-0 left-0 blur-3xl"
-        ></motion.div>
+     
 
         <motion.div
           animate={{
