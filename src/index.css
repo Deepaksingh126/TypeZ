@@ -3,11 +3,9 @@
 @tailwind components;
 @tailwind utilities;
 
-/* @font-face {
+@custom-variant dark (&:where(.dark, .dark *));
+
+ @font-face {
   font-family: "Geist";
   src: url(./assets/fonts/geist/Geist-Regular.ttf);
 }
-
-* {
-  font-family: "Geist", sans-serif; */
-/* } */
