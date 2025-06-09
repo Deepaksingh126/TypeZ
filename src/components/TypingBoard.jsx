@@ -1,6 +1,5 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import Timer from "./Timer";
-import { motion, time } from "motion/react";
 import TypingCompleteScreen from "./TypingCompleteScreen";
 import ReloadLogo from "../Svg/ReloadLogo";
 
@@ -83,8 +82,8 @@ const TypingBoard = (props) => {
         </div>
 
         <div className="w-full flex-wrap overflow-hidden flex justify-end bg-gray-100 dark:bg-white/10 rounded-xl gap-2 z-40 p-6 shadow-lg dark:shadow-white/10 text-black dark:text-white border border-gray-300 dark:border-gray-600">
-          <span className="w-full h-full p-10 text-center font-mono text-xl flex flex-wrap justify-center items-center gap-0 leading-none"  aria-hidden="true">
-            
+          <span className="w-full h-full p-10 text-center font-mono text-xl flex flex-wrap justify-center items-center gap-0 leading-none" aria-hidden="true">
+
             {quote.split(" ").map((word, wordIndex) => {
               const startIndex = currentCharIndex;
               currentCharIndex += word.length + 1;
@@ -96,13 +95,12 @@ const TypingBoard = (props) => {
                     return (
                       <span
                         key={index}
-                        className={` ${
-                          index < currentIdx
+                        className={` ${index < currentIdx
                             ? "text-gray-400 dark:text-white/40"
                             : index === currentIdx
-                            ? "bg-black dark:bg-white text-white dark:text-black"
-                            : "text-black dark:text-white"
-                        } text-lg inline-block whitespace-nowrap`}
+                              ? "bg-black dark:bg-white text-white dark:text-black"
+                              : "text-black dark:text-white"
+                          } text-lg inline-block whitespace-nowrap`}
                         aria-hidden="true"
                       >
                         {" "}
@@ -111,13 +109,12 @@ const TypingBoard = (props) => {
                     );
                   })}
                   <span
-                    className={`${
-                      startIndex + word.length < currentIdx
+                    className={`${startIndex + word.length < currentIdx
                         ? "text-gray-400 dark:text-white/40"
                         : startIndex + word.length === currentIdx
-                        ? "bg-black dark:bg-white text-white dark:text-black"
-                        : "text-gray-600 dark:text-gray-400"
-                    } w-3 text-lg`}
+                          ? "bg-black dark:bg-white text-white dark:text-black"
+                          : "text-gray-600 dark:text-gray-400"
+                      } w-3 text-lg`}
                     aria-hidden="true"
                   >
                     {" "}
@@ -125,6 +122,7 @@ const TypingBoard = (props) => {
                 </span>
               );
             })}
+
           </span>
         </div>
       </div>
@@ -137,12 +135,11 @@ const TypingBoard = (props) => {
           accuracy={accuracy}
         />
       )}
-       <div
+      <div
         animate={{ opacity: 0 }}
         transition={{ duration: 2 }}
-        className={`${
-          warning ? "" : "bg-gradient-to-br opacity-40 from-black to-red-600/60"
-        } w-[100vw] h-screen absolute top-0 right-0 z-30`}
+        className={`${warning ? "" : "bg-gradient-to-br opacity-40 from-white to-red-600 dark:from-black dark:to-red-600"
+          } w-[100vw] h-screen absolute top-0 right-0 z-30`}
       ></div>
     </>
   );

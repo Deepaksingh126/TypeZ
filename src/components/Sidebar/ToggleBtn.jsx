@@ -1,5 +1,5 @@
 import useDarkMode from '../../hooks/useDarkMode';
-import { Moon, Sun } from 'lucide-react'; // Optional: react-icons or lucide-react
+import { Moon, Sun } from 'lucide-react';
 
 export default function ToggleButton() {
   const { isDark, toggleTheme } = useDarkMode();

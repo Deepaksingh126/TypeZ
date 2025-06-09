@@ -53,7 +53,7 @@ function AuthForDev() {
         Developer Authentication Page
       </h2>
 
-      <p className="text-lg text-white/80 lg:text-base mb-4 text-center sm:text-[0.8rem] p-4 text-[0.6rem] ">
+      <p className="text-lg text-black lg:text-base mb-4 text-center dark:text-white sm:text-[0.8rem] p-4 text-[0.6rem] ">
         This page is for developers. If you want to contribute or test the
         infinite typing mode, click the button below.
       </p>
@@ -78,7 +78,7 @@ function AuthForDev() {
         <a
           href="https://x.com/Deepak12_6"
           target="blank"
-          className="flex  lg:text-base mb-4 text-center sm:text-[0.8rem] gap-2 items-center justify-around border-1 round border-white/40 px-4 py-2 font-bold"
+          className="flex  lg:text-base mb-4 text-center sm:text-[0.8rem] gap-2 items-center justify-around border-1 round dark:border-white/40 px-4 py-2 font-bold"
         >
           contact the dev
           <LeftArrowLogo />
