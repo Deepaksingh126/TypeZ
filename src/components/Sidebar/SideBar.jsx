@@ -73,7 +73,7 @@ function SideBar() {
           </div>
           <div className="flex gap-3">
             <a
-              href="https://x.com/Deepak12_6"
+              href="https://x.com/me_deep_26"
               target="blank"
               className="p-1 rounded-sm bg-gray-100 dark:bg-black/30 border-1 border-gray-400"
             >
